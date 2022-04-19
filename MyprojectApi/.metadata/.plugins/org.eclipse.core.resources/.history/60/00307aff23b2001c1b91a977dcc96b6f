@@ -1,0 +1,58 @@
+package com.example.demo.service;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+ 
+
+import java.util.List;
+
+@Service
+public class AdduserProductService {
+    @Autowired
+    private AdduserProductService repository;
+
+    public AdduserProduct saveCustomer(Customer customer) {
+        return repository.save(customer);
+    }
+
+    public List<Customer> saveCustomers(List<Customer> products) {
+        return repository.saveAll(products);
+    }
+
+    public List<Customer> getCustomers() {
+        return repository.findAll();
+    }
+
+    public Customer getCustomerById(int id) {
+        return repository.findById(id).orElse(null);
+    }
+
+    public Customer getCustomerByName(String fullName) {
+        return repository. findByFullName(fullName);
+    }
+
+    public String deleteCustomer(int id) {
+        repository.deleteById(id);
+        return "customer removed !! " + id;
+    }
+
+    public Customer updateCustomer(Customer customer) {
+    	Customer existingcustomer = repository.findById(customer.getId()).orElse(null);
+        existingcustomer.setOwnerName(customer.getOwnerName());
+        existingcustomer.setPhoneNumber(customer.PhoneNumber());
+        existingcustomer.setOwnerAddress(customer.getOwnerAddress());
+        existingcustomer.setVehicleName(customer.getVehicleName());
+        existingcustomer.setPrice(customer.getPrice());
+        existingcustomer.setImage(customer.getImage());
+        existingcustomer.setCategory(customer.getCategory());
+        existingcustomer.setVehicleDetails(customer.getVehicleDetails());
+
+        
+        
+        return repository.save(existingcustomer);
+    }
+
+     
+
+}

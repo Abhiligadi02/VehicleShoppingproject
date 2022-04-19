@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="EGit.KnownHosts">
+		<item value="bitbucket.org"/>
+		<item value="git.eclipse.org"/>
+		<item value="github.com"/>
+	</list>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://github.com/Abhiligadi02/STSExample1.git"/>
+	</list>
+	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
+		<item key="MAIN_SASH_FORM_ORIENTATION_VERTICAL" value="false"/>
+		<item key="HORIZONTAL_SASH_FORM_WEIGHT" value="500,500"/>
+		<item key="STAGING_SASH_FORM_WEIGHT" value="500,500"/>
+		<item key="sortItemState" value="false"/>
+	</section>
+	<section name="GitCommitMessageComponent">
+		<list key="C:\Users\abhishek.ligadi\git\STSExample1\.git">
+			<item value="false"/>
+			<item value="abhishek.ligadi &lt;abhishek.ligadi@GP4FT2-21.SLKSOFT.COM&gt;"/>
+			<item value="FirstProject"/>
+			<item value="abhishek.ligadi &lt;abhishek.ligadi@GP4FT2-21.SLKSOFT.COM&gt;"/>
+			<item value="e3d92eb8844341aadf40617c627abfa62672f574"/>
+			<item value="0"/>
+			<item value="false"/>
+		</list>
+	</section>
+</section>

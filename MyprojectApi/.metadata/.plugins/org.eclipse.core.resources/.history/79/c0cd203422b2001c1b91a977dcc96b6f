@@ -1,0 +1,44 @@
+package com.example.demo.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+ 
+ 
+@Entity
+@Table(name = "AddUserProductDetails")
+public class AdduserProduct {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @Column(name="ownerName")
+    private String ownerName;
+    
+    @Column(name="phoneNumber")
+    private long phoneNumber;
+    
+    @Column(name="ownerAdress")
+    private String ownerAdress;
+    
+    @Column(name="vehicleName")
+    private String vehicleName;
+    
+    @Column(name="price")
+    private int price;
+    
+    @Column(name="vehicalImage")
+    private String vehicleImage;
+    
+    @Column(name="Category")
+    private String category;
+    
+    @Column(name="VehicleDetails")
+    private String vehicleDetails;
+    
+ 
+    
+    
+}
