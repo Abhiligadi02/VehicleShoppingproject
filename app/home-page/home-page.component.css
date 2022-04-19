@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .front-control{
+    border-radius: 5px;
+    margin-left: 25px;
+    width: 600px;
+  }
+  .search-icon{
+    z-index: 10;
+    position: absolute;
+    right: 48%;
+    color: rgb(218, 218, 221);
+    
+  }

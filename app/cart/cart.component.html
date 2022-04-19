@@ -1,0 +1,121 @@
+ 
+  <mat-toolbar style="background:linear-gradient(90deg,rgb(247, 185, 195),rgb(166, 209, 118),rgb(238, 238, 133)) ;">
+    <marquee width="80%">
+        <p style="font-size: xx-large;color: blue;">Welcome to UK Vehicle shopping!!<img
+                src="https://cdn-icons-png.flaticon.com/256/6966/6966536.png" style="width: 80px;height: 80px;"></p>
+    </marquee>
+</mat-toolbar>
+
+
+<mat-toolbar style="background-color: rgb(85, 139, 238);">
+    <button mat-button [matMenuTriggerFor]="menu" style="font-size: x-large;">Menu</button>
+    <mat-menu #menu="matMenu" style="width: 3000px; height: 600px;">
+      <button mat-menu-item routerLink="/bikeproduct" style="width: 300px; height: 100px;">  <h1> Bike <img src="https://cdn-icons-png.flaticon.com/512/3148/3148937.png" alt="Bike"
+        style="width:70px;height: 70px;"></h1></button>
+      <button mat-menu-item routerLink="/carproduct" style="width: 300px; height: px;"><h1>Car <img src="https://cdn-icons-png.flaticon.com/512/3774/3774278.png" alt=" "
+        style="width: 70px;height: 70px;"></h1></button>
+    </mat-menu>
+
+    <a class="nav-link" routerLink="/home" routerLinkActive="active" style="color: rgb(116, 236, 116);">Home <span
+            class="sr-only"></span></a>
+
+
+    <a class="nav-link" routerLink="/about" routerLinkActive="active" style="color: rgb(116, 236, 116);">About
+        Us</a>
+
+
+    <a class="nav-link" routerLink="/privacy" routerLinkActive="active" style="color: rgb(116, 236, 116);">Privacy
+        Policy</a>
+
+
+    <a class="nav-link" routerLink="/terms" routerLinkActive="active" style="color: rgb(116, 236, 116);">Terms and
+        Conditions</a>
+
+    <div class="from-group">
+        <input type="text" class="form-control" placeholder="search product">
+    </div>
+    <span class="material-icons">
+        search
+    </span>
+<div style="width: 500px;">
+    <span class="example-spacer"></span>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+            crossorigin="anonymous">
+    </button>
+    <button class="btn btn-primary" routerLink="/cart"><span class="material-icons">
+            shopping_cart
+        </span>
+        <div class=" badge bg-danger">{{totalItemNumber}}</div>
+    </button>
+
+</div>
+</mat-toolbar>
+
+    <ng-container *ngIf="products.length !=0">
+        <div class="container">
+        <div class="card-table">
+            <div class="card-product">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Sr.no</th>
+                            <th>product Name</th>
+                            <th>Product Image</th>
+                           <th> Description</th>
+                           <th>Price</th>
+                           <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of products, let i=index">
+                            <td>{{i+1}}</td>
+                            <td>{{item.title}}</td>
+                            <td><img src="{{item.image}}" alt="" style="width: 120px;"></td>
+                            <td style="width: 10%;">{{item.quantity}}</td>
+                            <td style="width: 10%;">{{item.price}}</td>
+                            <td style="width: 20%;">{{item.total}}</td>
+                            
+                            <td><button (click)="removeProduct(item)" class="btn btn-danger"><span class="material-icons">
+                                delete
+                                </span></button></td>
+                             
+                        </tr>
+                        <tr>
+                            <td colspan="3"></td> 
+                            <td><button (click)="removeAllProduct()" class="btn btn-danger" style="background-color: rgb(209, 64, 45);color: aliceblue">Empty</button></td>
+                            <td><button routerLink="/home" class="btn btn-warning" style="background-color:darkblue;color:aliceblue;">Shop more</button></td>
+                            <td><button routerLink="/checkout" class="btn btn-primaryr" style="background-color: green;color: aliceblue;">Check out</button></td>
+                            <td><strong>Total:- INR{{allproducts}}</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+               
+            </div>
+        </div>
+    </div>
+    </ng-container>
+    
+
+    <ng-container *ngIf="products.length==0">
+<div class="container">
+    <div class="card">
+        <div class="card-title">
+            My cart
+        </div>
+        <div class="center">
+            <img src="https://cdn-icons-png.flaticon.com/512/2278/2278992.png" alt=""> 
+            <h2>Your cart is empty!!</h2>
+            <h3>Add items to it now</h3>
+            <button class="btn btn-primary" routerLink="/home">Shop Now</button>
+        </div>
+    </div>
+</div>
+</ng-container>
+    
